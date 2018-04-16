@@ -1,0 +1,24 @@
+@import '../../../assets/css/colors.scss';
+@import '../../../assets/css/mixin.scss';
+
+.dashboard__item {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    @include flex__centered;
+    padding: 20px;
+    border: 1px solid $color-woodsmoke;
+    border-radius: 5px;
+}
+
+.dashboard__item-line {
+    padding-bottom: 5px;
+
+    &:last-of-type {
+        padding-bottom: 0;
+    }
+}
+
+.dashboard__item-line--title {
+    font-weight: bold;
+}

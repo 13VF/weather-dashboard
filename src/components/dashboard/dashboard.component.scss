@@ -1,0 +1,7 @@
+@import '../../assets/css/mixin.scss';
+
+.dashboard {
+    display: flex;
+    @include flex__centered;
+    padding: 20px;
+}
