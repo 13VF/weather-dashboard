@@ -1,7 +1,10 @@
 @import '../../assets/css/mixin.scss';
 
 .dashboard {
+    width: 100%;
+    box-sizing: border-box;
     display: flex;
+    flex-wrap: wrap;
     @include flex__centered;
     padding: 20px;
 }

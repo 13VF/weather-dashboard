@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import { convertKToC } from '../../../utils/weather';
 import './dashboard-item.component.css';
 
 class DashboardItem extends Component {
     render() {
-        let { title, temp } = { ...this.props };
+        let { title, temp, iconId } = { ...this.props };
 
         return (
             <div className="dashboard__item">
@@ -11,7 +12,14 @@ class DashboardItem extends Component {
                     { title }
                 </div>
                 <div className="dashboard__item-line">
-                    { temp }
+                    { convertKToC(temp) + ' °C' }
+                </div>
+                <div className="dashboard__item-line dashboard__item-line--delete"
+                    onClick={ () => this.props.onDelete() }>
+                    delete
+                </div>
+                <div className="dashboard__item-line">
+                    <img src={ `http://openweathermap.org/img/w/${iconId}.png` } alt="weather icon"/>
                 </div>
             </div>
         );

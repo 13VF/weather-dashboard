@@ -2,13 +2,20 @@
 @import '../../../assets/css/mixin.scss';
 
 .dashboard__item {
+    position: relative;
     display: flex;
     flex-direction: column;
     margin: 20px;
     @include flex__centered;
     padding: 20px;
-    border: 1px solid $color-woodsmoke;
+    border: 1px solid $color-tahunaSands;
     border-radius: 5px;
+
+    &:hover {
+        .dashboard__item-line--delete {
+            display: block;
+        }
+    }
 }
 
 .dashboard__item-line {
@@ -21,4 +28,12 @@
 
 .dashboard__item-line--title {
     font-weight: bold;
+}
+
+.dashboard__item-line--delete {
+    display: none;
+    position: absolute;
+    bottom: 3px;
+    cursor: pointer;
+    color: $color-cinnabar;
 }
